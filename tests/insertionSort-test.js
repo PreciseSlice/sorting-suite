@@ -1,13 +1,15 @@
-const { assert } = require('chai');
+import { expect } from 'chai';
 
-// const InsertionSort = require('../scripts/insertionSort.js');
+import index from '../scripts/index';
+
+const insertionSort = require('../scripts/insertionSort.js');
 
 describe('insertionSort unit testing', () => {
 
-	it.skip('should be a function, insertionSort', () => {
-		const insertionSort = new InsertionSort();
+    it('should sort a small array of numbers with insertionSort', () => {
+        const numbers = [ 4, 2, 1, 3 ];
 
-		assert.isFunction(insertionSort);
-	});
+        expect( insertionSort(numbers) ).to.deep.equal( [ 1, 2, 3, 4 ] );
+    });
 
 }); 

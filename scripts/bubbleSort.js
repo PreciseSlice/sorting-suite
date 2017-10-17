@@ -1,18 +1,14 @@
-const numbers = [ 8, 7, 6, 5, 4, 3, 2 ,1 ];
-
-const bubbleSort = ( array ) => {
-  array.forEach(element => {
-    for (let i = 0; i < array.length; i++) {
-      if (array[i + 1] < array[i]) {
-      let temp = array[i + 1];
-      array[i + 1] = array[i];
-      array[i] = temp; 
-      }   
+const bubbleSort = arr => {
+  for (let i = 0; i < arr.length - 1; i++) {
+  	console.log(arr);
+    for (let j = 0; j < arr.length - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        [arr[j], arr[j+1]] = [arr[j+1], arr[j]];
+      }
     }
-  });
-  return array;
+  }
+  console.log(arr);
+  return arr;
 };
 
-bubbleSort(numbers);
-
-module.exports = BubbleSort; 
+module.exports = bubbleSort;

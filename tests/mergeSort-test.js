@@ -1,13 +1,15 @@
-const { assert } = require('chai');
+import { expect } from 'chai';
 
-// const MergeSort = require('../scripts/mergeSort.js');
+import index from '../scripts/index';
+
+// const mergeSort = require('../scripts/mergeSort.js');
 
 describe('mergeSort unit testing', () => {
 
-	it.skip('should be a function, mergeSort', () => {
-		const mergeSort = new MergeSort();
+  it.skip('should sort a small array of numbers with insertionSort', () => {
+    const numbers = [ 5, 3, 8, 1 ];
 
-		assert.isFunction(mergeSort);
-	});
+    expect( insertionSort(numbers) ).to.deep.equal( [ 1, 3, 5, 8 ] );
+  });
 
 }); 
