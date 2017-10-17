@@ -1,5 +1,5 @@
 const filterMe = (array) => {
-  return array
-}
+  return array;
+};
 
-export default filterMe
+export default filterMe;
