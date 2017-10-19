@@ -33,22 +33,22 @@ describe('bubbleSort unit testing', () => {
 		expect( bubbleSort(letters) ).to.deep.equal( ['a', 'b', 'c', 'd' ] );
 	});
 
-	it('should be able to sort an array of 100 numbers', () => {
+	it('should be able to sort an array of 100 two digit numbers', () => {
 		let array = createArray(0, 99, 100);
 		assert.deepEqual(checkArray(bubbleSort(array)), true);
 	});
 
-	it('should be able to sort an array of 1,000 numbers', () => {
+	it('should be able to sort an array of 1,000 two digit numbers', () => {
 		let array = createArray(0, 99, 1000);
 		assert.deepEqual(checkArray(bubbleSort(array)), true);
 	});
 
-	it('should be able to sort an array of 10,000 numbers', () => {
+	it('should be able to sort an array of 10,000 two digit numbers', () => {
 		let array = createArray(0, 99, 10000);
 		assert.deepEqual(checkArray(bubbleSort(array)), true);
 	});
 
-	it.skip('should be able to sort an array of 20,000 numbers', () => {
+	it.skip('should be able to sort an array of 20,000 two digit numbers', () => {
 		let array = createArray(0, 99, 20000);
 		assert.deepEqual(checkArray(bubbleSort(array)), true);
 	});
