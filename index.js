@@ -1,9 +1,9 @@
-import bubbleSort from './scripts/bubbleSort';
-import insertionSort from './scripts/insertionSort';
-import mergeSort from './scripts/mergeSort';
-import quickSort from './scripts/quickSort';
-import createArray from './scripts/random.js'; 
-import checkArray from './scripts/random.js';
+const bubbleSort = require('./scripts/bubbleSort');
+const insertionSort = require('./scripts/insertionSort');
+const mergeSort = require('./scripts/mergeSort');
+const quickSort = require('./scripts/quickSort');
+const createArray = require('./scripts/random.js'); 
+const checkArray = require('./scripts/random.js');
 
 module.exports = {
 	bubbleSort,
