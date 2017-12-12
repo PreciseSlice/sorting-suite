@@ -1,6 +1,6 @@
 import { expect, assert } from 'chai';
 
-import index from '../scripts/index';
+import index from '../index';
 
 const quickSort = require('../scripts/quickSort');
 
