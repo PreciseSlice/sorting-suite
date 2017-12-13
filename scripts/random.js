@@ -17,4 +17,4 @@ const checkArray = (sortedArray) => {
 	}
 };
 
-module.exports = {createArray, checkArray };
+module.exports = { createArray, checkArray };

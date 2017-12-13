@@ -13,10 +13,11 @@ function merge(left, right) {
   while (left.length && right.length) {
 	if (left[0] <= right[0]) {
 	  result.push(left.shift());
-	  } else {
+	} else {
 	  result.push(right.shift());
 		}
-	  }
+  }
+  
 	  result.push(...left, ...right);
 	  return result;
 }
