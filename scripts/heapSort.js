@@ -1,39 +1,50 @@
-const arr = [ 5, 2, 3, 7 ];
-
+let arr = [1,3,2,56,7]
 let lastIndex = arr.length - 1;
 
-function heapify(arr, lastIndex) {
-  
-  for (let i = Math.floor(arr.length / 2); i >= 0; i --) {
-    let left = 2 * i + 1;
-    let right = 2 * i + 2;
-    
-    if (arr[i] < arr[left]) {
-      [arr[i], arr[left]] = [arr[left], arr[i]];
-    }
-    
-    if (arr[i] < arr[right]) {
-      [arr[i], arr[right]] = [arr[right], arr[i]];
-    }
-    
-  }
-  
-  return arr; 
-}
+const buildHeap = (arr, i) => {
+  //let lastIndex = arr.length - 1;
+  let leftChild = 2 * i + 1;
+  let rightChild = 2 * i + 2; 
+  let parent = i;
 
-function heapSort (arr, lastIndex) {
-
-  while (lastIndex > 0) {
-    [arr[0], arr[lastIndex]] = [arr[lastIndex], arr[0]];
-    lastIndex --;
-    heapify(arr, lastIndex);
+  if (leftChild < lastIndex && arr[leftChild] > arr[parent]){
+      parent = leftChild;
   }
 
-  return arr;
+  if (rightChild < lastIndex && arr[rightChild] > arr[parent]){
+      parent = rightChild;
+  }
+    
+  if (parent != i) {
+    let temp = arr[i];
 
-}
+    arr[i] = arr[parent];
+    arr[parent] = temp;
+    buildHeap(arr, parent);
+  }
 
+};
 
-test = heapSort(arr, lastIndex);
+const heapSort = arr => {
+  lastIndex = arr.length;
+
+  for(let i = Math.floor(lastIndex / 2); i >= 0; i--){
+    buildHeap(arr, i);
+  }
+  
+  for(i = arr.length - 1; i > 0; i--){
+    let temp = arr[0];
+      arr[0] = arr[i];
+      arr[i] = temp;
+      
+      lastIndex--;
+      buildHeap(arr, 0);
+    }
+    return arr;
+};
+
+let test = heapSort(arr);
 
 console.log(test);
+
+module.exports = heapSort;
