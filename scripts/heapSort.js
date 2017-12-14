@@ -1,33 +1,39 @@
-// let parent = Math.floor((i-1) / 2);
-// let leftChild = 2 * i + 1;
-// let rightChild = 2 * i + 2;
+const arr = [ 5, 2, 3, 7 ];
 
-const arr = [ 1, 2, 3, 4, 5, 6 ];
+let lastIndex = arr.length - 1;
 
-const index = Math.floor(arr.length / 2);
-
-function heapify(arr) {
-
-  for (var i = Math.floor(arr.length / 2); i >= 0; i --) {
-    let leftChild = i * 2 + 1;
-    let rightChild = i * 2 + 2;
-    let parent = arr[i];
-    let temp = 0;
-    console.log(parent);
-    if ( parent < arr[leftChild] ) {
-      console.log('greater-left');
+function heapify(arr, lastIndex) {
+  
+  for (let i = Math.floor(arr.length / 2); i >= 0; i --) {
+    let left = 2 * i + 1;
+    let right = 2 * i + 2;
+    
+    if (arr[i] < arr[left]) {
+      [arr[i], arr[left]] = [arr[left], arr[i]];
     }
     
-    if ( parent < arr[rightChild] ) {
-      console.log('greater-right');
+    if (arr[i] < arr[right]) {
+      [arr[i], arr[right]] = [arr[right], arr[i]];
     }
-    console.log('-------------------');
+    
   }
+  
   return arr; 
 }
 
-heapify(arr);
+function heapSort (arr, lastIndex) {
 
-//test = heapify(arr);
+  while (lastIndex > 0) {
+    [arr[0], arr[lastIndex]] = [arr[lastIndex], arr[0]];
+    lastIndex --;
+    heapify(arr, lastIndex);
+  }
 
-//console.log(test);
+  return arr;
+
+}
+
+
+test = heapSort(arr, lastIndex);
+
+console.log(test);
